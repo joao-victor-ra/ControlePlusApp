@@ -30,6 +30,9 @@ import com.example.controleplus.R
 import com.example.controleplus.core.components.BottomNavigationBar
 import com.example.controleplus.core.util.Screen
 import com.example.controleplus.core.util.bottomNavItems
+import com.example.controleplus.orders.presentation.home.components.BALANCE_TYPE
+import com.example.controleplus.orders.presentation.home.components.EXPENSE_TYPE
+import com.example.controleplus.orders.presentation.home.components.INCOME_TYPE
 import com.example.controleplus.orders.presentation.home.components.TotalIncomeExpenseBox
 import com.example.controleplus.ui.theme.Black
 import com.example.controleplus.ui.theme.DarkGray
@@ -93,7 +96,7 @@ fun HomeScreen(
                         .padding(bottom = 235.dp)
                 ) {
                     TotalIncomeExpenseBox(
-                        "balance",
+                        BALANCE_TYPE,
                         value.totalBalance,
                         modifier = Modifier.size(135.dp)
                     )
@@ -105,12 +108,12 @@ fun HomeScreen(
                         .padding(top = 85.dp)
                 ) {
                     TotalIncomeExpenseBox(
-                        "income",
+                        INCOME_TYPE,
                         value.totalIncome,
                         modifier = Modifier.size(135.dp)
                     )
                     TotalIncomeExpenseBox(
-                        "expense",
+                        EXPENSE_TYPE,
                         value.totalExpense,
                         modifier = Modifier.size(135.dp)
                     )

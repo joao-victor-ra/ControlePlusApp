@@ -26,6 +26,10 @@ import com.example.controleplus.ui.theme.DarkGray
 import com.example.controleplus.ui.theme.LightGreen
 import com.example.controleplus.ui.theme.Red
 
+const val INCOME_TYPE = "income"
+const val EXPENSE_TYPE = "expense"
+const val BALANCE_TYPE = "balance"
+
 @Composable
 fun TotalIncomeExpenseBox(
     type: String,
@@ -34,16 +38,16 @@ fun TotalIncomeExpenseBox(
 ) {
 
     val color = when (type) {
-        "income" -> LightGreen
-        "expense" -> Red
-        "balance" -> Color.White
+        INCOME_TYPE -> LightGreen
+        EXPENSE_TYPE -> Red
+        BALANCE_TYPE -> Color.White
         else -> Color.White
     }
 
     val title = when (type) {
-        "income" -> stringResource(R.string.income_plural)
-        "expense" -> stringResource(R.string.expense_plural)
-        "balance" -> stringResource(R.string.balance_singular)
+        INCOME_TYPE -> stringResource(R.string.income_plural)
+        EXPENSE_TYPE -> stringResource(R.string.expense_plural)
+        BALANCE_TYPE -> stringResource(R.string.balance_singular)
         else -> ""
     }
 
@@ -85,11 +89,11 @@ fun IncomeExpenseBoxPreview() {
                 .background(Color.Yellow)
                 .fillMaxSize()
         ) {
-            TotalIncomeExpenseBox(type = "income", amount = "1000")
+            TotalIncomeExpenseBox(type = BALANCE_TYPE, amount = "1000")
             Spacer(modifier = Modifier.height(25.dp))
-            TotalIncomeExpenseBox(type = "expense", amount = "1050.0")
+            TotalIncomeExpenseBox(type = EXPENSE_TYPE, amount = "1050.0")
             Spacer(modifier = Modifier.height(25.dp))
-            TotalIncomeExpenseBox(type = "balance", amount = "1250.0")
+            TotalIncomeExpenseBox(type = INCOME_TYPE, amount = "1250.0")
         }
     }
 }
